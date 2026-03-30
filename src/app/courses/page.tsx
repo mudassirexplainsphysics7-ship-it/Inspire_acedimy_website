@@ -17,13 +17,13 @@ export default function CoursesPage() {
         {
             title: "Middle & Matriculation",
             grades: "Class 8, 9 & 10",
-            subjects: ["Physics", "Chemistry", "Biology/Computer", "Math"],
+            subjects: ["Physics", "Math"],
             description: "Our Middle and Matriculation programs are fully aligned with the board syllabus, equipping students with strong subject knowledge, exam strategies, and skills to achieve top grades in their final board exams.",
         },
         {
             title: "Intermediate Programs",
             grades: "FSC / ICS",
-            subjects: ["Physics", "Chemistry", "Computer", "Math"],
+            subjects: ["Physics", "Math"],
             description: "Our intermediate programs strengthen conceptual understanding to excel in final exams and build a solid foundation for university entry tests.",
         },
         {
