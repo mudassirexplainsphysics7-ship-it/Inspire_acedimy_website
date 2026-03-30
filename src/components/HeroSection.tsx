@@ -114,11 +114,15 @@ export default function HeroSection() {
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0 }
                             }}
-                            className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+                            className="mb-10 max-w-2xl mx-auto lg:mx-0"
                         >
-                            <span className="text-primary-600 mt-2">Home/Online Tuition Provider</span>
-                            <p>Providing quality education for class 1 to 12 through academy, home and online tution.</p>
-                            <p>Focused on concept clarity, critical thinking, exam preparation, and overall academic excellence.</p>
+                            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-primary-600 mb-6 tracking-tight leading-tight">
+                                Home/Online Tuition Provider
+                            </h2>
+                            <div className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium space-y-2">
+                                <p>Providing quality education for class 1 to 12 through academy, home and online tution.</p>
+                                <p>Focused on concept clarity, critical thinking, exam preparation, and overall academic excellence.</p>
+                            </div>
                         </motion.div>
 
                         <motion.div

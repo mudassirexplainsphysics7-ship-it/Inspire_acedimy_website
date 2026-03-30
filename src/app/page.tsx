@@ -96,7 +96,7 @@ export default function Home() {
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-secondary-600 font-semibold tracking-wider uppercase text-sm">Why Choose Inspire Academy?</span>
+            <span className="text-secondary-600 font-semibold tracking-wider uppercase text-lg">Why Choose Inspire Academy?</span>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2 mb-6">A Modern Learning Experience</h2>
             <p className="text-slate-600 text-lg">We focus on concept clarity, critical thinking, SLO-based learning, and personalized character building for every student.</p>
           </div>
