@@ -45,18 +45,18 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-semibold text-slate-700">Student/Parent Name</label>
-                        <input required type="text" id="name" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Ali Khan" />
+                        <input required name="name" type="text" id="name" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Ali Khan" />
                     </div>
                     <div className="space-y-2">
                         <label htmlFor="phone" className="text-sm font-semibold text-slate-700">Phone Number</label>
-                        <input required type="tel" id="phone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="0300 1234567" />
+                        <input required name="phone" type="tel" id="phone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="0300 1234567" />
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="class" className="text-sm font-semibold text-slate-700">Class/Grade</label>
-                        <select required id="class" defaultValue="" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-700 cursor-pointer">
+                        <select required name="class" id="class" defaultValue="" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-700 cursor-pointer">
                             <option value="" disabled>Select Class</option>
                             <option value="Early & Primary Education">Early & Primary Education</option>
                             <option value="Middle & Matriculation">Middle & Matriculation</option>
@@ -68,7 +68,7 @@ export default function ContactForm() {
                     </div>
                     <div className="space-y-2">
                         <label htmlFor="subject" className="text-sm font-semibold text-slate-700">Interested Subjects</label>
-                        <input required type="text" id="subject" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Math, Physics, Chemistry..." />
+                        <input required name="subject" type="text" id="subject" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Math, Physics, Chemistry..." />
                     </div>
                 </div>
 
