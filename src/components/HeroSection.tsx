@@ -15,7 +15,7 @@ export default function HeroSection() {
                         scale: [1, 1.1, 1]
                     }}
                     transition={{
-                        duration: 8,
+                        duration: 6,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
@@ -28,10 +28,10 @@ export default function HeroSection() {
                         scale: [1, 0.9, 1]
                     }}
                     transition={{
-                        duration: 10,
+                        duration: 8,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: 1
+                        delay: 0.5
                     }}
                     className="absolute top-40 -left-10 md:-left-20 w-56 h-56 md:w-80 md:h-80 bg-secondary-300/30 rounded-full blur-3xl"
                 />
@@ -42,10 +42,10 @@ export default function HeroSection() {
                         scale: [1, 1.2, 1]
                     }}
                     transition={{
-                        duration: 12,
+                        duration: 10,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: 2
+                        delay: 1
                     }}
                     className="absolute -bottom-20 md:-bottom-40 left-1/4 md:left-1/2 w-64 h-64 md:w-96 md:h-96 bg-pink-300/20 rounded-full blur-3xl"
                 />
@@ -74,7 +74,7 @@ export default function HeroSection() {
                             visible: {
                                 opacity: 1,
                                 transition: {
-                                    staggerChildren: 0.2
+                                    staggerChildren: 0.1
                                 }
                             }
                         }}
@@ -99,8 +99,8 @@ export default function HeroSection() {
                                     y: 0,
                                     transition: {
                                         type: "spring",
-                                        damping: 25,
-                                        stiffness: 100
+                                        damping: 20,
+                                        stiffness: 150
                                     }
                                 }
                             }}
@@ -168,7 +168,7 @@ export default function HeroSection() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
                         className="relative block w-full h-[300px] sm:h-[400px] lg:h-[500px] mt-10 lg:mt-0"
                     >
 

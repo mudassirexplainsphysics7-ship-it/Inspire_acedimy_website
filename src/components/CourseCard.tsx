@@ -16,8 +16,8 @@ export default function CourseCard({ title, grades, subjects, description, delay
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.4, delay }}
             whileHover={{ y: -5 }}
             className="flex flex-col h-full bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-primary-100 transition-all duration-300 relative overflow-hidden group"
         >
@@ -44,7 +44,7 @@ export default function CourseCard({ title, grades, subjects, description, delay
                 variants={{
                     visible: {
                         transition: {
-                            staggerChildren: 0.1
+                            staggerChildren: 0.05
                         }
                     }
                 }}

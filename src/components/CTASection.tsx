@@ -16,7 +16,7 @@ export default function CTASection() {
                             src="/schoolchildren-reading-library_1098-4048.avif"
                             alt="Students reading and learning together"
                             fill
-                            className="object-cover opacity-40 mix-blend-luminosity hover:opacity-50 hover:scale-105 transition-all duration-1000"
+                            className="object-cover opacity-40 mix-blend-luminosity hover:opacity-50 hover:scale-105 transition-all duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/95 via-slate-900/80 to-primary-900/50" />
                     </div>
@@ -24,13 +24,13 @@ export default function CTASection() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-20px" }}
                         variants={{
                             hidden: { opacity: 0 },
                             visible: {
                                 opacity: 1,
                                 transition: {
-                                    staggerChildren: 0.2
+                                    staggerChildren: 0.1
                                 }
                             }
                         }}
