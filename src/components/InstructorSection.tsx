@@ -89,7 +89,7 @@ export default function InstructorSection() {
                                 }}
                                 className="text-slate-600 mb-8 leading-relaxed"
                             >
-                                At <span className="font-bold">Inspire Academy of Sciences & Skills</span>, we focus on concept clarity, critical thinking, and SLO-based learning. We prepare students not just for exams but for life through personalized guidance and character building.
+                                <span className="font-bold">Inspire Academy of Sciences & Skills</span>, Institute is a  modern, student-centered and supportive learning institute. Our mission is to Inspire Young Minds. We focus on concept clarity, critical thinking, exam-oriented preparation, career counseling, & character building through personalized guidance.
                             </motion.p>
 
                             <div className="space-y-6 mb-10">
