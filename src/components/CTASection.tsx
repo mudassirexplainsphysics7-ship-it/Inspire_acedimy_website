@@ -53,7 +53,9 @@ export default function CTASection() {
                             }}
                             className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed font-medium"
                         >
-                            Join <span className="font-bold text-white">Inspire Academy of Sciences & Skills</span> today and experience a student-centered approach focusing on your success in exams and life.
+                            Join <span className="font-bold text-white">Inspire Academy of Sciences & Skills</span><br />Your success story starts here.
+                            <br />Hundreds of students have unlocked their potential with us.
+                            Take the first step — book your free demo class now and see the change yourself.
                         </motion.p>
 
                         <motion.div
