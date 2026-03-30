@@ -177,7 +177,7 @@ export default function HeroSection() {
                         {/* User Provided Photography */}
                         <div className="absolute inset-0 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100">
                             <Image
-                                src="/mudassar.jpg"
+                                src="/mudassarr.jpg"
                                 alt="Mudassar Aslam - Lead Instructor"
                                 fill
                                 priority
