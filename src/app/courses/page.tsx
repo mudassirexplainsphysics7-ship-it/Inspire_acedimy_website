@@ -10,13 +10,13 @@ export default function CoursesPage() {
     const allCourses = [
         {
             title: "Early & Primary Education",
-            grades: "Class 1 to 8",
+            grades: "Class 1 to 5",
             subjects: ["Creativity", "Critical Thinking", "Core Foundation"],
             description: "Our Early and Primary education program provide a strong foundation in core subjects to foster creativity, critical thinking and love for learning from the very first years.",
         },
         {
             title: "Middle & Matriculation",
-            grades: "Class 9 & 10",
+            grades: "Class 8, 9 & 10",
             subjects: ["Physics", "Chemistry", "Biology/Computer", "Math"],
             description: "Our Middle and Matriculation programs are fully aligned with the board syllabus, equipping students with strong subject knowledge, exam strategies, and skills to achieve top grades in their final board exams.",
         },
