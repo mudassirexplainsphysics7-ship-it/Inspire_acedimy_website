@@ -93,12 +93,12 @@ export default function Home() {
       <HeroSection />
 
       {/* Features/Why Choose Us Section */}
-      <section className="py-24 bg-white relative">
+      <section className="py-24 bg-white dark:bg-slate-900 relative transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-secondary-600 font-semibold tracking-wider uppercase text-lg">Why Choose Inspire Academy?</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2 mb-6">A Modern Learning Experience</h2>
-            <p className="text-slate-600 text-lg">We focus on concept clarity, critical thinking, exam-oriented preparation, Activity-Based learning, career counseling, character building & personalized guidance.</p>
+            <span className="text-secondary-600 dark:text-secondary-400 font-semibold tracking-wider uppercase text-lg">Why Choose Inspire Academy?</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mt-2 mb-6">A Modern Learning Experience</h2>
+            <p className="text-slate-600 dark:text-slate-300 text-lg">We focus on concept clarity, critical thinking, exam-oriented preparation, Activity-Based learning, career counseling, character building & personalized guidance.</p>
           </div>
 
           <motion.div
@@ -142,14 +142,14 @@ export default function Home() {
                   hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                className="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 group relative overflow-hidden"
+                className="p-10 rounded-[2rem] bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 group relative overflow-hidden"
               >
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-${feature.accent}-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-${feature.accent}-200 transition-colors`} />
-                <div className={`w-16 h-16 rounded-2xl bg-white shadow-sm text-${feature.accent === 'pink' ? 'pink' : feature.accent + '-600'} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform relative z-10`}>
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-${feature.accent}-100 dark:bg-${feature.accent}-900/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-${feature.accent}-200 dark:group-hover:bg-${feature.accent}-800/40 transition-colors`} />
+                <div className={`w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-sm text-${feature.accent === 'pink' ? 'pink' : feature.accent + '-600'} dark:text-${feature.accent === 'pink' ? 'pink-400' : feature.accent + '-400'} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform relative z-10`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 relative z-10 text-slate-800">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed relative z-10">{feature.text}</p>
+                <h3 className="text-2xl font-bold mb-4 relative z-10 text-slate-800 dark:text-white">{feature.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed relative z-10">{feature.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -159,9 +159,9 @@ export default function Home() {
       <InstructorSection />
 
       {/* Featured Courses Section */}
-      <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] md:h-[500px] bg-primary-200/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute left-0 bottom-0 w-64 h-64 md:w-[400px] md:h-[400px] bg-secondary-200/30 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] md:h-[500px] bg-primary-200/30 dark:bg-primary-900/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-0 bottom-0 w-64 h-64 md:w-[400px] md:h-[400px] bg-secondary-200/30 dark:bg-secondary-900/20 rounded-full blur-3xl pointer-events-none" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -170,10 +170,10 @@ export default function Home() {
             className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6"
           >
             <div className="max-w-2xl">
-              <span className="text-primary-600 font-bold tracking-wider uppercase text-sm">Our Academic Programs</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">Classes We Offer</h2>
+              <span className="text-primary-600 dark:text-primary-400 font-bold tracking-wider uppercase text-sm">Our Academic Programs</span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mt-3 tracking-tight">Classes We Offer</h2>
             </div>
-            <Link href="/courses" className="px-8 py-4 rounded-xl border border-slate-300 bg-white shadow-sm text-slate-700 font-bold hover:border-primary-500 hover:text-primary-600 hover:shadow-md transition-all">
+            <Link href="/courses" className="px-8 py-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm text-slate-700 dark:text-slate-200 font-bold hover:border-primary-500 hover:text-primary-600 hover:shadow-md transition-all">
               View All Courses
             </Link>
           </motion.div>
@@ -187,12 +187,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
+      <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] dark:opacity-[0.05] dark:invert pointer-events-none" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-amber-500 font-bold tracking-wider uppercase text-sm">Success Stories</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight mb-6">What Our Students Say</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mt-3 tracking-tight mb-6">What Our Students Say</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -204,12 +204,12 @@ export default function Home() {
       </section>
 
       {/* Map Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary-600 font-bold tracking-wider uppercase text-sm">Find Us</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-3 tracking-tight">Our Location</h2>
-            <p className="text-slate-600 mt-4 text-lg">We are conveniently located in Chak Bawa, Haveli Lakha. Visit us today to start your academic success journey!</p>
+            <span className="text-primary-600 dark:text-primary-400 font-bold tracking-wider uppercase text-sm">Find Us</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mt-3 tracking-tight">Our Location</h2>
+            <p className="text-slate-600 dark:text-white mt-4 text-lg">We are conveniently located in Chak Bawa, Haveli Lakha. Visit us today to start your academic success journey!</p>
           </div>
           <MapSection height="500px" />
         </div>

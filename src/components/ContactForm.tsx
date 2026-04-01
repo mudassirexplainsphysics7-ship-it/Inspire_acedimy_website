@@ -33,49 +33,49 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-slate-100 relative overflow-hidden"
+            className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-10 shadow-xl border border-slate-100 dark:border-slate-800 relative overflow-hidden"
         >
             {/* Decorative gradient blur */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-            <h3 className="text-2xl font-bold text-slate-900 mb-2 relative z-10">Enroll Now</h3>
-            <p className="text-slate-500 mb-8 relative z-10 text-sm">Fill out the registration form below and I will get back to you within 24 hours.</p>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 relative z-10">Enroll Now</h3>
+            <p className="text-slate-500 dark:text-slate-400 mb-8 relative z-10 text-sm">Fill out the registration form below and I will get back to you within 24 hours.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-semibold text-slate-700">Student/Parent Name</label>
-                        <input required name="name" type="text" id="name" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Ali Khan" />
+                        <label htmlFor="name" className="text-sm font-semibold text-slate-700 dark:text-white">Student/Parent Name</label>
+                        <input required name="name" type="text" id="name" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:bg-white dark:focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="Ali Khan" />
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-semibold text-slate-700">Phone Number</label>
-                        <input required name="phone" type="tel" id="phone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="0300 1234567" />
+                        <label htmlFor="phone" className="text-sm font-semibold text-slate-700 dark:text-white">Phone Number</label>
+                        <input required name="phone" type="tel" id="phone" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:bg-white dark:focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="0300 1234567" />
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label htmlFor="class" className="text-sm font-semibold text-slate-700">Class/Grade</label>
-                        <select required name="class" id="class" defaultValue="" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-700 cursor-pointer">
+                        <label htmlFor="class" className="text-sm font-semibold text-slate-700 dark:text-white">Class/Grade</label>
+                        <select required name="class" id="class" defaultValue="" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:bg-white dark:focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-700 dark:text-white cursor-pointer">
                             <option value="" disabled>Select Class</option>
-                            <option value="Early & Primary Education">Early & Primary Education</option>
-                            <option value="Middle & Matriculation">Middle & Matriculation</option>
+                            <option value="Early & Primary Education">Early &amp; Primary Education</option>
+                            <option value="Middle & Matriculation">Middle &amp; Matriculation</option>
                             <option value="Intermediate Programs">Intermediate Programs</option>
                             <option value="Public Speaking Course">Public Speaking Course</option>
-                            <option value="Handwriting Mastery">Handwriting & Presentation Mastery</option>
+                            <option value="Handwriting Mastery">Handwriting &amp; Presentation Mastery</option>
                             <option value="Creative Writing">Creative Writing and Essay Writing</option>
                         </select>
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="subject" className="text-sm font-semibold text-slate-700">Interested Subjects</label>
-                        <input required name="subject" type="text" id="subject" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 placeholder-slate-400" placeholder="Math, Physics, Chemistry..." />
+                        <label htmlFor="subject" className="text-sm font-semibold text-slate-700 dark:text-white">Interested Subjects</label>
+                        <input required name="subject" type="text" id="subject" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:bg-white dark:focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all font-medium text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="Math, Physics, Chemistry..." />
                     </div>
                 </div>
 
                 <button
                     disabled={status !== 'idle'}
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-slate-900 text-white font-bold tracking-wide hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-lg hover:shadow-xl transition-all duration-300 mt-2 flex items-center justify-center gap-2 group disabled:opacity-90 disabled:cursor-not-allowed overflow-hidden relative"
+                    className="w-full py-4 rounded-xl bg-slate-900 dark:bg-gradient-to-r dark:from-primary-600 dark:to-secondary-600 text-white font-bold tracking-wide hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-lg hover:shadow-xl transition-all duration-300 mt-2 flex items-center justify-center gap-2 group disabled:opacity-90 disabled:cursor-not-allowed overflow-hidden relative"
                 >
                     <AnimatePresence mode="wait">
                         {status === 'idle' && (

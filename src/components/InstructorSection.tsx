@@ -5,10 +5,10 @@ import { FaGraduationCap, FaAward, FaUniversity, FaQuoteLeft } from 'react-icons
 
 export default function InstructorSection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
             {/* Background Accents */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-primary-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-60" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-50 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 opacity-60" />
+            <div className="absolute top-0 left-0 w-64 h-64 bg-primary-50 dark:bg-primary-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-50 dark:bg-secondary-900/20 rounded-full blur-3xl translate-x-1/4 translate-y-1/4 opacity-60 pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -67,7 +67,7 @@ export default function InstructorSection() {
                                     hidden: { opacity: 0, x: -20 },
                                     visible: { opacity: 1, x: 0 }
                                 }}
-                                className="text-primary-600 font-bold tracking-wider uppercase text-sm mb-4 block"
+                                className="text-primary-600 dark:text-primary-400 font-bold tracking-wider uppercase text-sm mb-4 block"
                             >
                                 Meet Your Instructor
                             </motion.span>
@@ -77,7 +77,7 @@ export default function InstructorSection() {
                                     hidden: { opacity: 0, y: 20 },
                                     visible: { opacity: 1, y: 0 }
                                 }}
-                                className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight font-display"
+                                className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight font-display"
                             >
                                 Dedicated Mentorship by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">Mudassar Aslam</span>
                             </motion.h2>
@@ -87,9 +87,9 @@ export default function InstructorSection() {
                                     hidden: { opacity: 0, y: 20 },
                                     visible: { opacity: 1, y: 0 }
                                 }}
-                                className="text-slate-600 mb-8 leading-relaxed"
+                                className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed"
                             >
-                                <span className="font-bold">Inspire Academy of Sciences & Skills</span>, Institute is a  modern, student-centered and supportive learning institute. Our mission is to Inspire Young Minds. We focus on concept clarity, critical thinking, exam-oriented preparation, career counseling, & character building through personalized guidance.
+                                <span className="font-bold text-slate-900 dark:text-white">Inspire Academy of Sciences & Skills</span>, Institute is a  modern, student-centered and supportive learning institute. Our mission is to Inspire Young Minds. We focus on concept clarity, critical thinking, exam-oriented preparation, career counseling, & character building through personalized guidance.
                             </motion.p>
 
                             <div className="space-y-6 mb-10">
@@ -113,14 +113,14 @@ export default function InstructorSection() {
                                             hidden: { opacity: 0, y: 20 },
                                             visible: { opacity: 1, y: 0 }
                                         }}
-                                        className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg transition-all duration-75"
+                                        className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg transition-all duration-75"
                                     >
-                                        <div className={`w-12 h-12 rounded-xl bg-${item.color}-100 flex items-center justify-center text-${item.color}-600 shrink-0`}>
+                                        <div className={`w-12 h-12 rounded-xl bg-${item.color}-100 dark:bg-${item.color}-900/30 flex items-center justify-center text-${item.color}-600 dark:text-${item.color}-400 shrink-0`}>
                                             {item.icon}
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-slate-900">{item.title}</h4>
-                                            <p className="text-slate-600 text-sm">{item.text}</p>
+                                            <h4 className="font-bold text-slate-900 dark:text-white">{item.title}</h4>
+                                            <p className="text-slate-600 dark:text-white text-sm">{item.text}</p>
                                         </div>
                                     </motion.div>
                                 ))}

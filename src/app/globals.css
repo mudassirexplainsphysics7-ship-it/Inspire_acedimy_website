@@ -71,6 +71,8 @@
   }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @utility glass {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
@@ -100,7 +102,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
+  @apply bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased overflow-x-hidden transition-colors duration-300;
   width: 100vw;
   max-width: 100%;
 }
@@ -115,11 +117,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  @apply bg-slate-100 dark:bg-slate-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  @apply bg-slate-300 dark:bg-slate-700;
   border-radius: 4px;
 }
 

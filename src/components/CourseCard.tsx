@@ -19,23 +19,23 @@ export default function CourseCard({ title, grades, subjects, description, delay
             viewport={{ once: true, margin: "-20px" }}
             transition={{ duration: 0.1, delay: delay ? delay / 4 : 0 }}
             whileHover={{ y: -5 }}
-            className="flex flex-col h-full bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-primary-100 transition-all duration-75 relative overflow-hidden group"
+            className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:border-primary-100 dark:hover:border-primary-900 transition-all duration-75 relative overflow-hidden group"
         >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-100 transition-colors pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 dark:bg-primary-900/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-100 dark:group-hover:bg-primary-800/30 transition-colors pointer-events-none" />
 
             <div className="flex justify-between items-start mb-4 relative z-10">
                 <div>
-                    <span className="inline-block px-3 py-1 rounded-full bg-secondary-50 text-secondary-600 text-xs font-semibold mb-2 shadow-sm">
+                    <span className="inline-block px-3 py-1 rounded-full bg-secondary-50 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 text-xs font-semibold mb-2 shadow-sm border border-secondary-100/50 dark:border-secondary-800/50">
                         {grades}
                     </span>
-                    <h3 className="text-xl font-bold text-slate-800 tracking-tight">{title}</h3>
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-white tracking-tight">{title}</h3>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 group-hover:scale-110 group-hover:bg-primary-500 group-hover:text-white transition-all shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-500 dark:text-primary-400 group-hover:scale-110 group-hover:bg-primary-500 group-hover:text-white transition-all shadow-sm">
                     <FaUserGraduate size={16} />
                 </div>
             </div>
 
-            <p className="text-sm text-slate-500 mb-6 relative z-10 leading-relaxed min-h-[60px]">{description}</p>
+            <p className="text-sm text-slate-500 dark:text-white mb-6 relative z-10 leading-relaxed min-h-[60px]">{description}</p>
 
             <motion.div
                 initial="hidden"
@@ -59,7 +59,7 @@ export default function CourseCard({ title, grades, subjects, description, delay
                                 hidden: { opacity: 0, scale: 0.8 },
                                 visible: { opacity: 1, scale: 1 }
                             }}
-                            className="flex items-center gap-1.5 text-xs font-medium text-slate-700 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100 shadow-sm"
+                            className="flex items-center gap-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 px-2.5 py-1 rounded-md border border-slate-100 dark:border-slate-700 shadow-sm"
                         >
                             <FaBookOpen className="text-primary-400" size={10} />
                             {subject}
@@ -68,7 +68,7 @@ export default function CourseCard({ title, grades, subjects, description, delay
                 </div>
             </motion.div>
 
-            <Link href="/contact" className="mt-auto block w-full text-center py-3.5 rounded-xl bg-slate-900 text-white font-medium hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-75 relative z-10">
+            <Link href="/contact" className="mt-auto block w-full text-center py-3.5 rounded-xl bg-slate-900 dark:bg-gradient-to-r dark:from-primary-600 dark:to-secondary-600 text-white font-medium hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-75 relative z-10">
                 Enroll Now
             </Link>
         </motion.div>

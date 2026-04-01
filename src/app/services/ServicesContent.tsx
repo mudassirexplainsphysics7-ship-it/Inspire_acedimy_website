@@ -35,13 +35,13 @@ const services = [
 
 export default function ServicesContent() {
     return (
-        <div className="flex flex-col min-h-screen pt-24 bg-slate-50 relative overflow-hidden">
+        <div className="flex flex-col min-h-screen pt-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
             {/* Background Aesthetic Elements */}
-            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-primary-50/30 via-white to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-primary-50/30 dark:from-primary-950/20 via-white dark:via-transparent to-transparent pointer-events-none" />
 
             {/* Animated shapes */}
-            <div className="absolute top-40 -left-20 w-96 h-96 bg-primary-100/30 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-            <div className="absolute bottom-40 -right-20 w-[500px] h-[500px] bg-secondary-100/20 rounded-full blur-[120px] animate-pulse pointer-events-none" />
+            <div className="absolute top-40 -left-20 w-96 h-96 bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+            <div className="absolute bottom-40 -right-20 w-[500px] h-[500px] bg-secondary-100/20 dark:bg-secondary-900/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 py-12 lg:py-20 text-center relative z-10">
                 <motion.div
@@ -49,11 +49,11 @@ export default function ServicesContent() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight font-display">
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 tracking-tight font-display">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600">Services</span>
                     </h1>
-                    <p className="text-lg md:text-2xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
-                        Bridging the gap between traditional excellence and modern innovation. Whether onsite or online, we <span className="text-primary-600 font-bold italic underline decoration-primary-200">Inspire</span> success.
+                    <p className="text-lg md:text-2xl text-slate-600 dark:text-white max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
+                        Bridging the gap between traditional excellence and modern innovation. Whether onsite or online, we <span className="text-primary-600 dark:text-primary-400 font-bold italic underline decoration-primary-200">Inspire</span> success.
                     </p>
                 </motion.div>
             </div>
@@ -84,7 +84,7 @@ export default function ServicesContent() {
                             whileHover={{ y: -15, transition: { duration: 0.4, ease: "easeOut" } }}
                             className="group relative h-full"
                         >
-                            <div className="h-full bg-white/80 backdrop-blur-2xl rounded-[3rem] p-12 shadow-[0_30px_70px_rgba(0,0,0,0.04)] border border-white/80 hover:border-primary-100 hover:shadow-primary-500/10 transition-all duration-500 relative overflow-hidden flex flex-col cursor-default">
+                            <div className="h-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[3rem] p-12 shadow-[0_30px_70px_rgba(0,0,0,0.04)] dark:shadow-[0_30px_70px_rgba(0,0,0,0.3)] border border-white/80 dark:border-slate-800 hover:border-primary-100 dark:hover:border-primary-800 hover:shadow-primary-500/10 transition-all duration-500 relative overflow-hidden flex flex-col cursor-default">
                                 {/* Service Ambient Glow */}
                                 <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 opacity-20 ${service.bg} group-hover:opacity-40 transition-opacity duration-700`} />
 
@@ -93,15 +93,15 @@ export default function ServicesContent() {
                                 </div>
 
                                 <div className="space-y-6 flex-grow relative z-10">
-                                    <h3 className="text-3xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors duration-300 tracking-tight">{service.title}</h3>
-                                    <p className="text-slate-600 text-lg leading-relaxed font-medium opacity-80 group-hover:opacity-100 transition-opacity">{service.description}</p>
+                                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300 tracking-tight">{service.title}</h3>
+                                    <p className="text-slate-600 dark:text-white text-lg leading-relaxed font-medium opacity-80 group-hover:opacity-100 transition-opacity">{service.description}</p>
                                 </div>
 
-                                <div className="mt-12 pt-8 border-t border-slate-100/80 flex items-center justify-between relative z-10">
+                                <div className="mt-12 pt-8 border-t border-slate-100/80 dark:border-slate-700/80 flex items-center justify-between relative z-10">
                                     <span className="text-xs font-black uppercase tracking-widest text-primary-500/40 group-hover:text-primary-500 transition-colors">Academic Excellence</span>
                                     <motion.div
                                         whileHover={{ x: 8 }}
-                                        className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/30 transition-all duration-300"
+                                        className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-300 group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/30 transition-all duration-300"
                                     >
                                         <FaArrowRight size={18} />
                                     </motion.div>

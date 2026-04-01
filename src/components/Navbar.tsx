@@ -7,6 +7,7 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { FaGraduationCap } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -34,8 +35,8 @@ export default function Navbar() {
             className={cn(
                 'fixed top-0 inset-x-0 z-50 transition-all duration-300',
                 isScrolled
-                    ? 'bg-white py-3 shadow-md border-b border-slate-100'
-                    : 'bg-white/80 backdrop-blur-md py-5'
+                    ? 'bg-white/95 dark:bg-slate-950/95 py-3 shadow-md border-b border-slate-100 dark:border-slate-800'
+                    : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md py-5'
             )}
         >
             <div className="container mx-auto px-4 md:px-6">
@@ -58,8 +59,8 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className={cn(
-                                        'text-sm font-medium transition-colors hover:text-primary-600 relative',
-                                        isActive ? 'text-primary-600' : 'text-slate-600'
+                                        'text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-primary-400 relative',
+                                        isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-300'
                                     )}
                                 >
                                     {link.name}
@@ -73,21 +74,25 @@ export default function Navbar() {
                                 </Link>
                             );
                         })}
+                        <ThemeToggle />
                         <Link
                             href="/contact"
-                            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium text-sm shadow-lg shadow-primary-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium text-sm shadow-lg shadow-primary-500/25 dark:shadow-primary-500/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                         >
                             Enroll Now
                         </Link>
                     </nav>
 
                     {/* Mobile Menu Toggle */}
-                    <button
-                        className="md:hidden z-50 p-2 text-slate-800"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <HiX size={26} /> : <HiMenuAlt3 size={26} />}
-                    </button>
+                    <div className="flex items-center gap-4 md:hidden z-50">
+                        <ThemeToggle />
+                        <button
+                            className="p-2 text-slate-800 dark:text-slate-200"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        >
+                            {mobileMenuOpen ? <HiX size={26} /> : <HiMenuAlt3 size={26} />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -98,7 +103,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20, height: 0 }}
                         animate={{ opacity: 1, y: 0, height: 'auto' }}
                         exit={{ opacity: 0, y: -20, height: 0 }}
-                        className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl p-4 md:hidden overflow-hidden origin-top"
+                        className="absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-xl p-4 md:hidden overflow-hidden origin-top"
                     >
                         <div className="flex flex-col gap-2 py-2">
                             {navLinks.map((link) => {
@@ -110,7 +115,7 @@ export default function Navbar() {
                                         onClick={() => setMobileMenuOpen(false)}
                                         className={cn(
                                             'text-base font-medium p-4 rounded-xl transition-all',
-                                            isActive ? 'bg-primary-50 text-primary-600' : 'text-slate-600 hover:text-primary-600 hover:bg-slate-50'
+                                            isActive ? 'bg-primary-50 dark:bg-slate-800/50 text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
                                         )}
                                     >
                                         {link.name}

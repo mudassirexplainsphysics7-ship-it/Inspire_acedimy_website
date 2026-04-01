@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 export default function CTASection() {
     return (
-        <section className="py-24 relative overflow-hidden bg-slate-50">
+        <section className="py-24 relative overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="bg-slate-900 rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-16 lg:p-20 relative overflow-hidden shadow-2xl">
+                <div className="bg-slate-900 dark:bg-slate-900/40 rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-16 lg:p-20 relative overflow-hidden shadow-2xl border border-transparent dark:border-slate-800">
 
                     {/* Photographic Background */}
                     <div className="absolute inset-0 z-0 overflow-hidden">
@@ -18,7 +18,7 @@ export default function CTASection() {
                             fill
                             className="object-cover opacity-40 mix-blend-luminosity hover:opacity-50 hover:scale-105 transition-all duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/95 via-slate-900/80 to-primary-900/50" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/95 dark:from-slate-950/95 via-slate-900/80 dark:via-slate-950/80 to-primary-900/50 dark:to-primary-950/50" />
                     </div>
 
                     <motion.div

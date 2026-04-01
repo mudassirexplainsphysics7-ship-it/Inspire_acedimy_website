@@ -47,12 +47,12 @@ export default function CoursesPage() {
     ];
 
     return (
-        <div className="flex flex-col min-h-screen pt-24 bg-slate-50">
+        <div className="flex flex-col min-h-screen pt-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
 
             {/* Header */}
             <div className="container mx-auto px-4 md:px-6 py-12 lg:py-16 text-center">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">Programs</span></h1>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">Programs</span></h1>
+                <p className="text-lg text-slate-600 dark:text-white max-w-2xl mx-auto font-medium">
                     Comprehensive tuition programs designed for students in Haveli Lakha and across Pakistan via our online platform.
                 </p>
             </div>

@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className="bg-slate-900 pt-20 pb-8 border-t border-slate-800 text-slate-300 relative overflow-hidden">
+        <footer className="bg-slate-900 dark:bg-slate-950 pt-20 pb-8 border-t border-slate-800 dark:border-slate-900 text-slate-300 transition-colors duration-300 relative overflow-hidden">
             {/* Decorative blobs */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-600/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
@@ -25,7 +25,7 @@ export default function Footer() {
                                 href="https://www.facebook.com/share/1868mFbS4M/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors duration-300"
+                                className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors duration-300 shadow-sm border border-slate-700/50 dark:border-slate-800/50"
                                 aria-label="Facebook"
                             >
                                 <FaFacebook size={18} />
@@ -34,12 +34,12 @@ export default function Footer() {
                                 href="https://www.instagram.com/mudassaraslam339?igsh=MWE0YnlybWswZXg3Zw=="
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-500 hover:text-white transition-colors duration-300"
+                                className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-pink-500 hover:text-white transition-colors duration-300 shadow-sm border border-slate-700/50 dark:border-slate-800/50"
                                 aria-label="Instagram"
                             >
                                 <FaInstagram size={18} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors duration-300" aria-label="Twitter">
+                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors duration-300 shadow-sm border border-slate-700/50 dark:border-slate-800/50" aria-label="Twitter">
                                 <FaTwitter size={18} />
                             </a>
                         </div>
@@ -85,8 +85,8 @@ export default function Footer() {
 
                 </div>
 
-                <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-slate-500">
+                <div className="pt-8 border-t border-slate-800 dark:border-slate-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-xs text-slate-500 dark:text-slate-600">
                         © {new Date().getFullYear()} Inspire Academy of Sciences & Skills. All rights reserved.
                     </p>
                     <div className="flex gap-4 text-xs text-slate-500">
