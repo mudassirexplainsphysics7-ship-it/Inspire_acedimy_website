@@ -15,7 +15,7 @@ export default function HeroSection() {
                         scale: [1, 1.1, 1]
                     }}
                     transition={{
-                        duration: 6,
+                        duration: 1.5,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
@@ -28,10 +28,10 @@ export default function HeroSection() {
                         scale: [1, 0.9, 1]
                     }}
                     transition={{
-                        duration: 8,
+                        duration: 1.5,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: 0.5
+                        delay: 0
                     }}
                     className="absolute top-40 -left-10 md:-left-20 w-56 h-56 md:w-80 md:h-80 bg-secondary-300/30 rounded-full blur-3xl"
                 />
@@ -42,10 +42,10 @@ export default function HeroSection() {
                         scale: [1, 1.2, 1]
                     }}
                     transition={{
-                        duration: 10,
+                        duration: 2,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: 1
+                        delay: 0
                     }}
                     className="absolute -bottom-20 md:-bottom-40 left-1/4 md:left-1/2 w-64 h-64 md:w-96 md:h-96 bg-pink-300/20 rounded-full blur-3xl"
                 />
@@ -53,12 +53,12 @@ export default function HeroSection() {
                 {/* Abstract shapes overlay */}
                 <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     className="absolute right-[10%] top-[20%] w-20 h-20 rounded-2xl border border-primary-500/20 rotate-12 opacity-50 hidden md:block"
                 />
                 <motion.div
                     animate={{ y: [0, 20, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute left-[15%] bottom-[30%] w-16 h-16 rounded-full border border-secondary-500/20 opacity-50 hidden md:block"
                 />
             </div>
@@ -74,7 +74,7 @@ export default function HeroSection() {
                             visible: {
                                 opacity: 1,
                                 transition: {
-                                    staggerChildren: 0.1
+                                    staggerChildren: 0.02
                                 }
                             }
                         }}
@@ -99,8 +99,8 @@ export default function HeroSection() {
                                     y: 0,
                                     transition: {
                                         type: "spring",
-                                        damping: 20,
-                                        stiffness: 150
+                                        damping: 12,
+                                        stiffness: 500
                                     }
                                 }
                             }}
@@ -168,7 +168,7 @@ export default function HeroSection() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.1, delay: 0 }}
                         className="relative block w-full h-[300px] sm:h-[400px] lg:h-[500px] mt-10 lg:mt-0"
                     >
 
@@ -181,7 +181,7 @@ export default function HeroSection() {
                                 alt="Mudassar Aslam - Lead Instructor"
                                 fill
                                 priority
-                                className="object-cover hover:scale-105 transition-transform duration-700"
+                                className="object-cover hover:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
                         </div>

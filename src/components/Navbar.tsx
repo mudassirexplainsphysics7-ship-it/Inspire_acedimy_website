@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { FaGraduationCap } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
@@ -39,8 +40,11 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 z-50">
-                        <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 tracking-tight">
+                    <Link href="/" className="flex items-center gap-2.5 z-50 group">
+                        <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-primary-600 to-secondary-600 text-white flex items-center justify-center shadow-[0_4px_10px_rgba(37,99,235,0.3)] group-hover:scale-105 transition-all duration-300">
+                            <FaGraduationCap size={22} className="group-hover:-rotate-12 transition-transform duration-300" />
+                        </div>
+                        <span className="text-xl md:text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 tracking-tight">
                             Inspire Academy
                         </span>
                     </Link>

@@ -18,7 +18,7 @@ export default function InstructorSection() {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.1 }}
                         className="w-full lg:w-[40%] relative"
                     >
                         <div className="relative max-w-sm mx-auto lg:mx-0">
@@ -57,7 +57,7 @@ export default function InstructorSection() {
                                 visible: {
                                     opacity: 1,
                                     transition: {
-                                        staggerChildren: 0.1
+                                        staggerChildren: 0.01
                                     }
                                 }
                             }}
@@ -113,7 +113,7 @@ export default function InstructorSection() {
                                             hidden: { opacity: 0, y: 20 },
                                             visible: { opacity: 1, y: 0 }
                                         }}
-                                        className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg transition-all duration-200"
+                                        className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg transition-all duration-75"
                                     >
                                         <div className={`w-12 h-12 rounded-xl bg-${item.color}-100 flex items-center justify-center text-${item.color}-600 shrink-0`}>
                                             {item.icon}

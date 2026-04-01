@@ -14,12 +14,12 @@ interface CourseCardProps {
 export default function CourseCard({ title, grades, subjects, description, delay = 0 }: CourseCardProps) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-20px" }}
-            transition={{ duration: 0.4, delay }}
+            transition={{ duration: 0.1, delay: delay ? delay / 4 : 0 }}
             whileHover={{ y: -5 }}
-            className="flex flex-col h-full bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-primary-100 transition-all duration-300 relative overflow-hidden group"
+            className="flex flex-col h-full bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-primary-100 transition-all duration-75 relative overflow-hidden group"
         >
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-100 transition-colors pointer-events-none" />
 
@@ -44,7 +44,7 @@ export default function CourseCard({ title, grades, subjects, description, delay
                 variants={{
                     visible: {
                         transition: {
-                            staggerChildren: 0.05
+                            staggerChildren: 0
                         }
                     }
                 }}
@@ -68,7 +68,7 @@ export default function CourseCard({ title, grades, subjects, description, delay
                 </div>
             </motion.div>
 
-            <Link href="/contact" className="mt-auto block w-full text-center py-3.5 rounded-xl bg-slate-900 text-white font-medium hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 relative z-10">
+            <Link href="/contact" className="mt-auto block w-full text-center py-3.5 rounded-xl bg-slate-900 text-white font-medium hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 focus:ring-4 focus:ring-primary-100 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-75 relative z-10">
                 Enroll Now
             </Link>
         </motion.div>

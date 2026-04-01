@@ -110,7 +110,7 @@ export default function Home() {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.2
+                  staggerChildren: 0.01
                 }
               }
             }}
@@ -139,10 +139,10 @@ export default function Home() {
               <motion.div
                 key={idx}
                 variants={{
-                  hidden: { opacity: 0, y: 30 },
+                  hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                className="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
+                className="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-200 group relative overflow-hidden"
               >
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-${feature.accent}-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-${feature.accent}-200 transition-colors`} />
                 <div className={`w-16 h-16 rounded-2xl bg-white shadow-sm text-${feature.accent === 'pink' ? 'pink' : feature.accent + '-600'} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform relative z-10`}>
@@ -180,7 +180,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCourses.map((course, idx) => (
-              <CourseCard key={idx} {...course} delay={idx * 0.15} />
+              <CourseCard key={idx} {...course} delay={idx * 0.05} />
             ))}
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <TestimonialCard key={idx} {...testimonial} delay={idx * 0.15} />
+              <TestimonialCard key={idx} {...testimonial} delay={idx * 0.05} />
             ))}
           </div>
         </div>
