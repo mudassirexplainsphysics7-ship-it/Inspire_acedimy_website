@@ -180,7 +180,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6"
+            className="flex flex-col md:flex-row justify-between items-center text-center md:items-end md:text-left mb-12 md:mb-16 gap-6"
           >
             <div className="max-w-2xl">
               <span className="text-primary-600 dark:text-primary-400 font-bold tracking-wider uppercase text-sm">Our Academic Programs</span>
@@ -191,9 +191,27 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCourses.map((course, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {featuredCourses.slice(0, 3).map((course, idx) => (
               <CourseCard key={idx} {...course} delay={idx * 0.05} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10 text-center md:text-left"
+          >
+            <div className="max-w-2xl">
+              <span className="text-secondary-600 dark:text-secondary-400 font-bold tracking-wider uppercase text-sm">Beyond Academics</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 tracking-tight">Skills Courses</h2>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredCourses.slice(3).map((course, idx) => (
+              <CourseCard key={idx + 3} {...course} delay={idx * 0.05} />
             ))}
           </div>
         </div>

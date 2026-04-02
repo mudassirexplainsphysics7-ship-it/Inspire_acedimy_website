@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
     FaAtom, FaSuperscript,
-    FaLanguage,
     FaMicrophone, FaPencilAlt, FaBook
 } from 'react-icons/fa';
 
@@ -29,15 +28,6 @@ const specializations = [
 ];
 
 const skills = [
-    {
-        icon: <FaLanguage size={28} />,
-        name: 'English Proficiency',
-        desc: 'Grammar, comprehension, and spoken English for all classes.',
-        color: 'from-sky-500 to-cyan-600',
-        bg: 'bg-sky-50 dark:bg-sky-900/20',
-        border: 'border-sky-100 dark:border-sky-800/50',
-        tag: 'Skill Building',
-    },
     {
         icon: <FaMicrophone size={28} />,
         name: 'Public Speaking',
@@ -154,7 +144,7 @@ export default function SubjectsSection() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: '-60px' }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
                     >
                         {skills.map((skill, idx) => (
                             <motion.div
