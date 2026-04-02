@@ -8,6 +8,11 @@ import InstructorSection from '@/components/InstructorSection';
 import CTASection from '@/components/CTASection';
 import MapSection from '@/components/MapSection';
 import { FaGraduationCap, FaChalkboardTeacher, FaClock } from 'react-icons/fa';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import StatsSection from '@/components/StatsSection';
+import FAQSection from '@/components/FAQSection';
+import ResultsTicker from '@/components/ResultsTicker';
+import SubjectsSection from '@/components/SubjectsSection';
 
 export default function Home() {
   const featuredCourses = [
@@ -92,6 +97,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <HeroSection />
 
+      <StatsSection />
+
+      <ResultsTicker />
+
       {/* Features/Why Choose Us Section */}
       <section className="py-24 bg-white dark:bg-slate-900 relative transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-6">
@@ -158,6 +167,10 @@ export default function Home() {
 
       <InstructorSection />
 
+      <HowItWorksSection />
+
+      <SubjectsSection />
+
       {/* Featured Courses Section */}
       <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] md:h-[500px] bg-primary-200/30 dark:bg-primary-900/20 rounded-full blur-3xl pointer-events-none" />
@@ -214,6 +227,8 @@ export default function Home() {
           <MapSection height="500px" />
         </div>
       </section>
+
+      <FAQSection />
 
       <CTASection />
     </div>
