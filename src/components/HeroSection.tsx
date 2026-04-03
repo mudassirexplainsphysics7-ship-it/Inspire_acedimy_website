@@ -80,7 +80,7 @@ export default function HeroSection() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative w-full h-[400px] sm:h-[450px] lg:h-[600px] mt-8 lg:mt-0 lg:ml-auto max-w-[90%] md:max-w-xl mx-auto"
+                        className="relative w-full h-[400px] sm:h-[450px] lg:h-[600px] mt-8 lg:mt-0 lg:ml-auto md:max-w-xl mx-auto"
                     >
                         {/* Decorative background blur ring behind the image */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-primary-500 to-secondary-500 rounded-full blur-[80px] opacity-20 dark:opacity-30 -z-10"></div>
@@ -100,19 +100,16 @@ export default function HeroSection() {
                             <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.2)] dark:shadow-[inset_0_0_100px_rgba(0,0,0,0.6)] pointer-events-none z-20"></div>
                         </div>
 
-                        {/* Floating Floating Glass Card 1 (Students) */}
+                        {/* Floating Glass Card 1 (Students) */}
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -left-2 md:-left-4 top-[15%] z-30 flex items-center gap-3 p-3 md:p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 shadow-xl"
+                            className="absolute left-6 md:left-12 -top-2 md:-top-4 z-30 flex items-center gap-2 md:gap-3 p-2 md:p-3 lg:p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/50 dark:border-slate-700/50 shadow-xl"
                         >
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-black text-sm md:text-lg shadow-inner">
+                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-black text-xs md:text-sm shadow-inner">
                                 500+
                             </div>
-                            <div>
-                                <p className="text-slate-900 dark:text-white font-bold text-[10px] md:text-sm tracking-tight">Active Students</p>
-                                <p className="text-slate-500 dark:text-slate-400 text-[9px] md:text-xs">Learning currently</p>
-                            </div>
+                            <p className="text-slate-900 dark:text-white font-bold text-[10px] md:text-sm tracking-tight">Active Students</p>
                         </motion.div>
 
                         {/* Floating Glass Card 2 (Grades) */}
