@@ -8,11 +8,12 @@ import InstructorSection from '@/components/InstructorSection';
 import CTASection from '@/components/CTASection';
 import MapSection from '@/components/MapSection';
 import { FaGraduationCap, FaChalkboardTeacher, FaClock } from 'react-icons/fa';
-import HowItWorksSection from '@/components/HowItWorksSection';
+import StackingCards from '@/components/StackingCards';
 import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import ResultsTicker from '@/components/ResultsTicker';
 import SubjectsSection from '@/components/SubjectsSection';
+import BentoFeatures from '@/components/BentoFeatures';
 
 export default function Home() {
   const featuredCourses = [
@@ -167,7 +168,9 @@ export default function Home() {
 
       <InstructorSection />
 
-      <HowItWorksSection />
+      <BentoFeatures />
+
+      <StackingCards />
 
       <SubjectsSection />
 

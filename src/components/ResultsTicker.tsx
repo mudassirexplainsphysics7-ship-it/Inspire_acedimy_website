@@ -17,7 +17,7 @@ const allResults = [...results, ...results];
 
 export default function ResultsTicker() {
     return (
-        <div className="py-5 bg-slate-900 dark:bg-slate-950 border-y border-slate-800 dark:border-slate-900 overflow-hidden transition-colors duration-300">
+        <div className="py-5 bg-white dark:bg-slate-950 border-y border-slate-200 dark:border-slate-900 overflow-hidden transition-colors duration-300">
             <div className="flex items-center gap-3 mb-0">
                 {/* Label */}
                 <div className="shrink-0 pl-6 pr-4 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-black uppercase tracking-widest rounded-r-full z-10 relative shadow-lg">
@@ -27,22 +27,22 @@ export default function ResultsTicker() {
                 {/* Scrolling track */}
                 <div className="flex-1 overflow-hidden relative">
                     {/* Fade edges */}
-                    <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-900 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-900 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white dark:from-slate-950 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white dark:from-slate-950 to-transparent z-10 pointer-events-none" />
 
                     <div className="flex animate-marquee gap-8 w-max">
                         {allResults.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="flex items-center gap-3 bg-slate-800/60 dark:bg-slate-800/40 border border-slate-700/50 rounded-full px-5 py-2.5 shrink-0 hover:border-primary-600/50 transition-colors cursor-default group"
+                                className="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 rounded-full px-5 py-2.5 shrink-0 hover:border-primary-300 dark:hover:border-primary-600/50 transition-colors cursor-default group shadow-sm dark:shadow-none"
                             >
                                 <span className="text-lg">{item.icon}</span>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-white font-bold text-sm">{item.student}</span>
-                                    <span className="text-slate-500 text-xs">•</span>
-                                    <span className="text-primary-400 font-semibold text-sm">{item.result}</span>
-                                    <span className="text-slate-500 text-xs">•</span>
-                                    <span className="text-slate-400 text-xs">{item.subject}</span>
+                                    <span className="text-slate-900 dark:text-white font-bold text-sm">{item.student}</span>
+                                    <span className="text-slate-300 dark:text-slate-500 text-xs">•</span>
+                                    <span className="text-primary-600 dark:text-primary-400 font-semibold text-sm">{item.result}</span>
+                                    <span className="text-slate-300 dark:text-slate-500 text-xs">•</span>
+                                    <span className="text-slate-500 dark:text-slate-400 text-xs">{item.subject}</span>
                                 </div>
                             </div>
                         ))}
