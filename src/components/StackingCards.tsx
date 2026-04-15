@@ -35,7 +35,7 @@ const features = [
 
 export default function StackingCards() {
     return (
-        <section className="py-24 md:py-32 bg-slate-50 dark:bg-black text-slate-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
+        <section className="py-20 bg-slate-50 dark:bg-black text-slate-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
             {/* Ambient Background Effects */}
             <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary-200/40 dark:bg-primary-500/10 rounded-full blur-[150px] pointer-events-none transition-colors" />
             <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-secondary-200/40 dark:bg-secondary-500/10 rounded-full blur-[150px] pointer-events-none transition-colors" />
@@ -72,7 +72,7 @@ export default function StackingCards() {
                 </div>
 
                 {/* Stacking Cards Container */}
-                <div className="w-full max-w-4xl mx-auto flex flex-col relative pb-32">
+                <div className="w-full max-w-4xl mx-auto flex flex-col relative">
                     {features.map((feature, index) => {
                         return (
                             <div

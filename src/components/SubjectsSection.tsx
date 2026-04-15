@@ -69,7 +69,7 @@ const cardVariants = {
 
 export default function SubjectsSection() {
     return (
-        <section className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+        <section className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
             {/* Bg blobs */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary-100/20 dark:bg-secondary-900/10 rounded-full blur-3xl pointer-events-none translate-y-1/3 -translate-x-1/3" />

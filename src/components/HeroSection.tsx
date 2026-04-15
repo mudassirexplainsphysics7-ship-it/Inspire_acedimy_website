@@ -1,14 +1,56 @@
-'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
+    const phrases = ["Your Trusted Learning Partner", "Your Trusted Academy"];
+    const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+    const [currentText, setCurrentText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [typingSpeed, setTypingSpeed] = useState(100);
+
+    useEffect(() => {
+        const handleTyping = () => {
+            const fullText = phrases[currentPhraseIndex];
+
+            if (!isDeleting) {
+                // Typing phase
+                if (currentText !== fullText) {
+                    setCurrentText(fullText.substring(0, currentText.length + 1));
+                    setTypingSpeed(50); // Fast typing
+                } else {
+                    // Fully typed: wait before deleting
+                    setIsDeleting(true);
+                    setTypingSpeed(1500); // Pause at end
+                }
+            } else {
+                // Deleting phase
+                if (currentText !== "") {
+                    setCurrentText(fullText.substring(0, currentText.length - 1));
+                    setTypingSpeed(30); // Fast deleting
+                } else {
+                    // Fully deleted: settle and wait before typing next
+                    setIsDeleting(false);
+                    setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+                    setTypingSpeed(500); // Short pause before starting next word
+                }
+            }
+        };
+
+        const timer = setTimeout(handleTyping, typingSpeed);
+        return () => clearTimeout(timer);
+    }, [currentText, isDeleting, phrases, currentPhraseIndex, typingSpeed]);
+
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             {/* Extremely Advanced Aurora Background Effect */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <motion.div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02] dark:opacity-[0.05] z-0"></div>
+
+                {/* Vertical Ambient Light Beams */}
+                <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-primary-500/30 to-transparent dark:via-primary-500/20 z-0"></div>
+                <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-secondary-500/30 to-transparent dark:via-secondary-500/20 z-0"></div>
 
                 <motion.div
                     animate={{ y: [0, -40, 0], x: [0, 30, 0], scale: [1, 1.2, 1] }}
@@ -25,7 +67,7 @@ export default function HeroSection() {
                     transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                     className="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-rose-400/20 dark:bg-rose-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen"
                 />
-            </div>
+            </motion.div>
 
             <div className="container mx-auto px-4 md:px-6 relative z-10 w-full max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
@@ -35,8 +77,8 @@ export default function HeroSection() {
                         initial="hidden"
                         animate="visible"
                         variants={{
-                            hidden: { opacity: 0 },
-                            visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+                            hidden: { opacity: 0, scale: 0.95 },
+                            visible: { opacity: 1, scale: 1, transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
                         }}
                         className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0 flex flex-col justify-center"
                     >
@@ -49,25 +91,34 @@ export default function HeroSection() {
 
                         <motion.h1
                             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 15, stiffness: 100 } } }}
-                            className="text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-6 font-display"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-4 font-display"
                         >
-                            Inspire Academy — Your Trusted <br className="hidden lg:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400">Academy</span>
+                            <span className="whitespace-nowrap">Inspire Academy</span>
+                            <div className="relative min-h-[1.5em] mt-1 lg:mt-2">
+                                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-violet-500 to-secondary-600 dark:from-primary-400 dark:via-violet-400 dark:to-secondary-400 bg-[length:200%_auto] leading-snug min-h-[1.2em]">
+                                    {currentText}
+                                    <span className="inline-block w-[4px] h-[0.8em] bg-primary-500 dark:bg-primary-400 ml-1 animate-pulse align-middle"></span>
+                                </span>
+                            </div>
                         </motion.h1>
 
-                        <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mb-10 text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-light space-y-4 max-w-xl mx-auto lg:mx-0">
-                            <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">Home/Online Tuition Provider</h2>
-                            <p>Providing quality education for class 1 to 12 through academy, home and online tution.</p>
-                            <p>Focused on concept clarity, critical thinking, exam preparation, and overall academic excellence.</p>
+                        <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="mb-8 max-w-xl mx-auto lg:mx-0">
+                            <h2 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-3">Home & Online Tuition Provider</h2>
+                            
+                            <div className="space-y-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                                <p>Providing quality education for <span className="font-semibold text-slate-900 dark:text-white">class 1 to 12</span> through academy, home and online tuition.</p>
+                                <p className="text-sm sm:text-base border-l-2 border-slate-200 dark:border-slate-800 pl-4 italic">Focused on concept clarity, critical thinking, exam preparation, and overall academic excellence.</p>
+                            </div>
                         </motion.div>
 
                         <motion.div
                             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                             className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start"
                         >
-                            <Link href="/contact" className="group relative w-full sm:w-auto sm:min-w-[200px] h-[64px] flex items-center justify-center rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold overflow-hidden shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-500 dark:to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                                <span className="relative flex items-center gap-2">Enroll Now</span>
+                            <Link href="/contact" className="group relative w-full sm:w-auto sm:min-w-[200px] h-[64px] flex items-center justify-center rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold overflow-hidden shadow-[0_15px_40px_-10px_rgba(0,0,0,0.4)] dark:shadow-[0_15px_40px_-10px_rgba(255,255,255,0.2)] hover:shadow-primary-500/50 hover:-translate-y-1 transition-all duration-300">
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-600 via-violet-600 to-secondary-600 dark:from-primary-500 dark:via-violet-500 dark:to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto]"></span>
+                                <span className="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-white/10 rotate-45 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-out z-0"></span>
+                                <span className="relative flex items-center gap-2 z-10">Enroll Now</span>
                             </Link>
                             <Link href="/services" className="w-full sm:w-auto sm:min-w-[200px] h-[64px] flex items-center justify-center rounded-full bg-white dark:bg-slate-900/50 text-slate-800 dark:text-white font-bold border-2 border-slate-200 dark:border-slate-800 backdrop-blur-md hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300">
                                 Explore Services
@@ -77,9 +128,9 @@ export default function HeroSection() {
 
                     {/* Right Column - Premium Graphic */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{ opacity: 0, scale: 0.9, rotateY: -15, rotateX: 5 }}
+                        animate={{ opacity: 1, scale: 1, rotateY: 0, rotateX: 0 }}
+                        transition={{ duration: 1.2, delay: 0.2, type: 'spring', bounce: 0.4 }}
                         className="relative w-full h-[400px] sm:h-[450px] lg:h-[600px] mt-8 lg:mt-0 lg:ml-auto md:max-w-xl mx-auto"
                     >
                         {/* Decorative background blur ring behind the image */}

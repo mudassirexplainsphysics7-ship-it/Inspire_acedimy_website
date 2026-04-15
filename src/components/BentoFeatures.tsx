@@ -4,7 +4,7 @@ import { FaUserGraduate, FaChartLine, FaFlask, FaRegClock } from 'react-icons/fa
 
 export default function BentoFeatures() {
     return (
-        <section className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden">
+        <section className="py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden">
             <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-primary-500/10 dark:bg-primary-500/5 blur-[120px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-secondary-500/10 dark:bg-secondary-500/5 blur-[150px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
 
@@ -36,20 +36,50 @@ export default function BentoFeatures() {
                             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-sm">
                                 Our rigorous testing and conceptual framework have consistently produced top-tier grades in Matric & FSC exams year over year.
                             </p>
+                            
+                            <div className="mt-6 flex gap-4 text-sm font-bold">
+                                <div className="flex items-center gap-1.5 text-emerald-600">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    Matric: 99%
+                                </div>
+                                <div className="flex items-center gap-1.5 text-primary-600">
+                                    <span className="w-2 h-2 rounded-full bg-primary-500"></span>
+                                    FSC: 97%
+                                </div>
+                            </div>
                         </div>
                         {/* Interactive UI Element Mockup */}
-                        <div className="mt-8 relative z-10 bg-slate-50 dark:bg-slate-950/50 border border-slate-100 dark:border-slate-800 rounded-2xl p-4 overflow-hidden group-hover:-translate-y-2 transition-transform duration-500">
-                            <div className="flex items-end gap-3 h-32 w-full justify-around pt-4">
+                        <div className="mt-8 relative z-10 bg-slate-50 dark:bg-slate-950/50 border border-slate-100 dark:border-slate-800 rounded-3xl p-6 overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+                            {/* Grid Lines Background */}
+                            <div className="absolute inset-0 px-6 py-8 flex flex-col justify-between pointer-events-none opacity-20">
+                                {[...Array(4)].map((_, i) => (
+                                    <div key={i} className="w-full h-px bg-slate-300 dark:bg-slate-700"></div>
+                                ))}
+                            </div>
+
+                            <div className="flex items-end gap-3 h-32 w-full justify-around relative z-10">
                                 {[30, 45, 65, 85, 98].map((height, i) => (
-                                    <div key={i} className="w-1/6 bg-primary-100 dark:bg-primary-900/30 rounded-t-lg relative">
+                                    <div key={i} className="flex-1 max-w-[45px] bg-slate-200/50 dark:bg-slate-800/50 rounded-t-xl relative h-full">
                                         <motion.div
                                             initial={{ height: 0 }}
                                             whileInView={{ height: `${height}%` }}
-                                            transition={{ duration: 1, delay: i * 0.15 }}
-                                            className="absolute bottom-0 w-full bg-gradient-to-t from-primary-600 to-primary-400 rounded-t-lg"
-                                        ></motion.div>
+                                            transition={{ duration: 1.2, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                            className="absolute bottom-0 w-full bg-gradient-to-t from-primary-600 via-primary-500 to-primary-400 rounded-t-xl shadow-[0_0_20px_rgba(37,99,235,0.2)] group-hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-shadow duration-500"
+                                        >
+                                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-black text-primary-600 dark:text-primary-400 whitespace-nowrap bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded-md shadow-sm border border-slate-100 dark:border-slate-800">
+                                                {height}%
+                                            </div>
+                                        </motion.div>
                                     </div>
                                 ))}
+                            </div>
+                            
+                            <div className="mt-6 flex justify-between px-2 text-[10px] uppercase tracking-[0.2em] font-black text-slate-400 dark:text-slate-500">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>
+                                <span>2023</span>
+                                <span className="text-primary-500 animate-pulse">Current</span>
                             </div>
                         </div>
                     </motion.div>
