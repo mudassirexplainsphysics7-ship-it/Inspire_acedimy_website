@@ -6,113 +6,116 @@ import { motion } from 'framer-motion';
 const services = [
     {
         id: "online",
-        icon: <FaLaptopCode size={38} />,
+        icon: <FaLaptopCode size={36} />,
         title: "Online Live Classes",
-        description: "Interactive real-time online classes available across Pakistan and internationally. We utilize premium digital whiteboards, screen sharing, and dedicated LMS for notes and assignments.",
-        color: "from-blue-600 to-indigo-600",
-        bg: "bg-blue-50/50",
-        gradient: "group-hover:from-blue-500 group-hover:to-indigo-500"
+        description: "Interactive real-time online classes available across Pakistan and internationally. We utilize premium digital whiteboards, screen sharing, and dedicated LMS for notes and assignments",
+        gradient: "from-blue-500 via-indigo-500 to-purple-500"
     },
     {
         id: "home",
-        icon: <FaHome size={38} />,
-        title: "Home Tuition (Haveli Lakha)",
+        icon: <FaHome size={36} />,
+        title: "Home Tuition",
         description: "Exclusive 1-on-1 and small group onsite tuition in Haveli Lakha. Personalized attention in a comfortable environment eliminating travel time for students.",
-        color: "from-emerald-600 to-teal-600",
-        bg: "bg-emerald-50/50",
-        gradient: "group-hover:from-emerald-500 group-hover:to-teal-500"
+        gradient: "from-emerald-500 via-teal-500 to-cyan-500"
     },
     {
         id: "test",
-        icon: <FaClipboardCheck size={38} />,
+        icon: <FaClipboardCheck size={36} />,
         title: "Test Preparation & Crash Courses",
         description: "Intensive 2-3 month crash courses geared strictly toward board exams. Focuses on paper attempting techniques, past paper solutions, and time management.",
-        color: "from-amber-500 to-orange-600",
-        bg: "bg-amber-50/50",
-        gradient: "group-hover:from-amber-400 group-hover:to-orange-500"
+        gradient: "from-orange-500 via-amber-500 to-yellow-500"
     }
 ];
 
 export default function ServicesContent() {
     return (
-        <div className="flex flex-col min-h-screen pt-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
-            {/* Background Aesthetic Elements */}
-            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-primary-50/30 dark:from-primary-950/20 via-white dark:via-transparent to-transparent pointer-events-none" />
+        <div className="relative min-h-screen pt-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-black overflow-hidden">
 
-            {/* Animated shapes */}
-            <div className="absolute top-40 -left-20 w-96 h-96 bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-            <div className="absolute bottom-40 -right-20 w-[500px] h-[500px] bg-secondary-100/20 dark:bg-secondary-900/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
+            {/* Background Glow */}
+            <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-primary-500/20 rounded-full blur-[150px]" />
+            <div className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[150px]" />
 
-            <div className="container mx-auto px-4 md:px-6 py-12 lg:py-20 text-center relative z-10">
-                <motion.div
+            {/* Header */}
+            <div className="container mx-auto px-6 text-center mb-20">
+                <motion.h1
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white"
+                >
+                    Our{" "}
+                    <span className="bg-gradient-to-r from-primary-500 to-purple-500 text-transparent bg-clip-text">
+                        Services
+                    </span>
+                </motion.h1>
+
+                <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ delay: 0.2 }}
+                    className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 tracking-tight font-display">
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600">Services</span>
-                    </h1>
-                    <p className="text-lg md:text-2xl text-slate-600 dark:text-white max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
-                        Bridging the gap between traditional excellence and modern innovation. Whether onsite or online, we <span className="text-primary-600 dark:text-primary-400 font-bold italic underline decoration-primary-200">Inspire</span> success.
-                    </p>
-                </motion.div>
+                    Bridging the gap between traditional excellence and modern innovation. Whether onsite or online, we  <span className="text-primary-600 dark:text-primary-400 font-bold italic underline decoration-primary-200">Inspire</span> success.
+                </motion.p>
             </div>
 
-            <div className="container mx-auto px-4 md:px-6 pb-32 relative z-10">
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                            opacity: 1,
-                            transition: {
-                                staggerChildren: 0.2
-                            }
-                        }
-                    }}
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto"
-                >
-                    {services.map((service, idx) => (
-                        <motion.div
-                            key={idx}
-                            variants={{
-                                hidden: { opacity: 0, y: 40 },
-                                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 15 } }
-                            }}
-                            whileHover={{ y: -15, transition: { duration: 0.4, ease: "easeOut" } }}
-                            className="group relative h-full"
-                        >
-                            <div className="h-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-[3rem] p-12 shadow-[0_30px_70px_rgba(0,0,0,0.04)] dark:shadow-[0_30px_70px_rgba(0,0,0,0.3)] border border-white/80 dark:border-slate-800 hover:border-primary-100 dark:hover:border-primary-800 hover:shadow-primary-500/10 transition-all duration-500 relative overflow-hidden flex flex-col cursor-default">
-                                {/* Service Ambient Glow */}
-                                <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 opacity-20 ${service.bg} group-hover:opacity-40 transition-opacity duration-700`} />
+            {/* Cards */}
+            <div className="container mx-auto px-6 pb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                                <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${service.color} text-white flex items-center justify-center mb-12 shadow-[0_15px_30px_rgba(37,99,235,0.2)] relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 60 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2 }}
+                            className="group relative"
+                        >
+
+                            {/* Glow Border */}
+                            <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 blur-xl transition duration-500`} />
+
+                            {/* Card */}
+                            <div className="relative bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800 rounded-[2rem] p-10 h-full shadow-xl transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-2xl">
+
+                                {/* Icon */}
+                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition`}>
                                     {service.icon}
                                 </div>
 
-                                <div className="space-y-6 flex-grow relative z-10">
-                                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300 tracking-tight">{service.title}</h3>
-                                    <p className="text-slate-600 dark:text-white text-lg leading-relaxed font-medium opacity-80 group-hover:opacity-100 transition-opacity">{service.description}</p>
-                                </div>
+                                {/* Title */}
+                                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-500 transition">
+                                    {service.title}
+                                </h3>
 
-                                <div className="mt-12 pt-8 border-t border-slate-100/80 dark:border-slate-700/80 flex items-center justify-between relative z-10">
-                                    <span className="text-xs font-black uppercase tracking-widest text-primary-500/40 group-hover:text-primary-500 transition-colors">Academic Excellence</span>
+                                {/* Description */}
+                                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+                                    {service.description}
+                                </p>
+
+                                {/* Footer */}
+                                <div className="flex items-center justify-between mt-auto">
+                                    <span className="text-xs uppercase tracking-widest text-slate-400 group-hover:text-primary-500 transition">
+                                        Learn More
+                                    </span>
+
                                     <motion.div
-                                        whileHover={{ x: 8 }}
-                                        className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-300 group-hover:bg-primary-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary-500/30 transition-all duration-300"
+                                        whileHover={{ x: 6 }}
+                                        className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-primary-500 group-hover:text-white transition"
                                     >
-                                        <FaArrowRight size={18} />
+                                        <FaArrowRight />
                                     </motion.div>
                                 </div>
 
-                                {/* Modern Bottom Accent */}
-                                <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-transparent via-primary-500/0 to-transparent group-hover:via-primary-500 transition-all duration-700" />
+                                {/* Shine Effect */}
+                                <div className="absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-100 transition duration-700">
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/20 blur-xl" />
+                                </div>
+
                             </div>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </div>
 
             <CTASection />
