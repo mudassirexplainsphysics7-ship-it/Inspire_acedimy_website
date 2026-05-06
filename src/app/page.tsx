@@ -8,7 +8,7 @@ import InstructorSection from '@/components/InstructorSection';
 import CTASection from '@/components/CTASection';
 import MapSection from '@/components/MapSection';
 import { FaGraduationCap, FaChalkboardTeacher, FaClock } from 'react-icons/fa';
-import StackingCards from '@/components/StackingCards';
+// import StackingCards from '@/components/StackingCards';
 import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import ResultsTicker from '@/components/ResultsTicker';
@@ -170,7 +170,7 @@ export default function Home() {
 
       <BentoFeatures />
 
-      <StackingCards />
+      {/* <StackingCards /> */}
 
       <SubjectsSection />
 
